@@ -5,50 +5,50 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Article = mongoose.model('Article'),
+  ShoppingList = mongoose.model('ShoppingList'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
- * Create a article
+ * Create a shoppinglist
  */
 exports.create = function (req, res) {
-  var article = new Article(req.body);
-  article.user = req.user;
+  var shoppinglist = new ShoppingList(req.body);
+  shoppinglist.user = req.user;
 
-  article.save(function (err) {
+  shoppinglist.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.json(shoppinglist);
     }
   });
 };
 
 /**
- * Show the current article
+ * Show the current shoppinglist
  */
 exports.read = function (req, res) {
-  res.json(req.article);
+  res.json(req.shoppinglist);
 };
 
 /**
- * Update a article
+ * Update a shoppinglist
  */
 exports.update = function (req, res) {
-  var article = req.article;
+  var shoppinglist = req.shoppinglist;
 
-  article.title = req.body.title;
-  article.content = req.body.content;
+  shoppinglist.title = req.body.title;
+  shoppinglist.content = req.body.content;
 
-  article.save(function (err) {
+  shoppinglist.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.json(shoppinglist);
     }
   });
 };
@@ -57,54 +57,54 @@ exports.update = function (req, res) {
  * Delete an article
  */
 exports.delete = function (req, res) {
-  var article = req.article;
+  var shoppinglist = req.shoppinglist;
 
-  article.remove(function (err) {
+  shoppinglist.remove(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.json(shoppinglist);
     }
   });
 };
 
 /**
- * List of Articles
+ * List of ShoppingLists
  */
 exports.list = function (req, res) {
-  Article.find().sort('-created').populate('user', 'displayName').exec(function (err, articles) {
+  ShoppingList.find().sort('-created').populate('user', 'displayName').exec(function (err, shoppinglists) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(articles);
+      res.json(shoppinglists);
     }
   });
 };
 
 /**
- * Article middleware
+ * ShoppingList middleware
  */
-exports.articleByID = function (req, res, next, id) {
+exports.shoppinglistByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Article is invalid'
+      message: 'Shopping List is invalid'
     });
   }
 
-  Article.findById(id).populate('user', 'displayName').exec(function (err, article) {
+  ShoppingList.findById(id).populate('user', 'displayName').exec(function (err, shoppinglist) {
     if (err) {
       return next(err);
-    } else if (!article) {
+    } else if (!shoppinglist) {
       return res.status(404).send({
-        message: 'No article with that identifier has been found'
+        message: 'No shopping list with that identifier has been found'
       });
     }
-    req.article = article;
+    req.shoppinglist = shoppinglist;
     next();
   });
 };

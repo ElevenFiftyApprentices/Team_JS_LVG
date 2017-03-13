@@ -1,8 +1,8 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-  function ($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('shoppinglists').controller('ShoppingListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ShoppingLists',
+  function ($scope, $stateParams, $location, Authentication, ShoppingLists) {
     $scope.authentication = Authentication;
 
     // Create new Article
@@ -10,20 +10,20 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       $scope.error = null;
 
       if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'articleForm');
+        $scope.$broadcast('show-errors-check-validity', 'shoppinglistForm');
 
         return false;
       }
 
-      // Create new Article object
-      var article = new Articles({
+      // Create new Shopping List object
+      var shoppinglist = new ShoppingLists({
         title: this.title,
         content: this.content
       });
 
       // Redirect after save
-      article.$save(function (response) {
-        $location.path('articles/' + response._id);
+      shoppinglist.$save(function (response) {
+        $location.path('shoppinglists/' + response._id);
 
         // Clear form fields
         $scope.title = '';
@@ -34,18 +34,18 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     };
 
     // Remove existing Article
-    $scope.remove = function (article) {
-      if (article) {
-        article.$remove();
+    $scope.remove = function (shoppinglist) {
+      if (shoppinglist) {
+        shoppinglist.$remove();
 
-        for (var i in $scope.articles) {
-          if ($scope.articles[i] === article) {
-            $scope.articles.splice(i, 1);
+        for (var i in $scope.shoppinglists) {
+          if ($scope.shoppinglists[i] === shoppinglist) {
+            $scope.shoppinglists.splice(i, 1);
           }
         }
       } else {
-        $scope.article.$remove(function () {
-          $location.path('articles');
+        $scope.shoppinglist.$remove(function () {
+          $location.path('shoppinglists');
         });
       }
     };
@@ -55,15 +55,15 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       $scope.error = null;
 
       if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'articleForm');
+        $scope.$broadcast('show-errors-check-validity', 'shoppinglistForm');
 
         return false;
       }
 
-      var article = $scope.article;
+      var shoppinglist = $scope.shoppinglist;
 
-      article.$update(function () {
-        $location.path('articles/' + article._id);
+      shoppinglist.$update(function () {
+        $location.path('shoppinglists/' + shoppinglist._id);
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
@@ -71,13 +71,13 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
     // Find a list of Articles
     $scope.find = function () {
-      $scope.articles = Articles.query();
+      $scope.shoppinglists = ShoppingLists.query();
     };
 
     // Find existing Article
     $scope.findOne = function () {
-      $scope.article = Articles.get({
-        articleId: $stateParams.articleId
+      $scope.shoppinglist = ShoppingLists.get({
+        shoppinglistId: $stateParams.shoppinglistId
       });
     };
   }
