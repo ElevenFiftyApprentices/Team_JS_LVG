@@ -39,3 +39,16 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+/*Bootstrap*/
+.lvl-over {
+  border: 1px dashed #555 !important;
+}
+
+.lvl-target {
+  background-color: #ddd; 
+  opacity: .5;
+}
+
+[draggable] {
+  cursor: move;
+}
