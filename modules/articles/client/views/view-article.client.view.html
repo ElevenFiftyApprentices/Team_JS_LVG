@@ -1,9 +1,9 @@
-<section ng-controller="ArticlesController" ng-init="findOne()">
+<section ng-controller="ShoppingListsController" ng-init="findOne()">
   <div class="page-header">
-    <h1 ng-bind="article.title"></h1>
+    <h1 ng-bind="shoppinglist.title"></h1>
   </div>
-  <div class="pull-right" ng-show="authentication.user._id == article.user._id">
-    <a class="btn btn-primary" ui-sref="articles.edit({articleId: article._id})">
+  <div class="pull-right" ng-show="authentication.user._id == shoppinglist.user._id">
+    <a class="btn btn-primary" ui-sref="shoppinglists.edit({shoppinglistId: shoppinglist._id})">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
     <a class="btn btn-primary" ng-click="remove();">
@@ -13,10 +13,10 @@
   <small>
     <em class="text-muted">
       Posted on
-      <span ng-bind="article.created | date:'mediumDate'"></span>
+      <span ng-bind="shoppinglist.created | date:'mediumDate'"></span>
       by
-      <span ng-bind="article.user.displayName"></span>
+      <span ng-bind="shoppinglist.user.displayName"></span>
     </em>
   </small>
-  <p class="lead" ng-bind="article.content"></p>
+  <p class="lead" ng-bind="shoppinglist.content"></p>
 </section>

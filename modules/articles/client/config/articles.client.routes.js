@@ -1,32 +1,32 @@
 'use strict';
 
 // Setting up route
-angular.module('articles').config(['$stateProvider',
+angular.module('shoppinglists').config(['$stateProvider',
   function ($stateProvider) {
     // Articles state routing
     $stateProvider
-      .state('articles', {
+      .state('shoppinglists', {
         abstract: true,
-        url: '/articles',
+        url: '/shoppinglists',
         template: '<ui-view/>'
       })
-      .state('articles.list', {
+      .state('shoppinglists.list', {
         url: '',
         templateUrl: 'modules/articles/client/views/list-articles.client.view.html'
       })
-      .state('articles.create', {
+      .state('shoppinglists.create', {
         url: '/create',
         templateUrl: 'modules/articles/client/views/create-article.client.view.html',
         data: {
           roles: ['user', 'admin']
         }
       })
-      .state('articles.view', {
-        url: '/:articleId',
+      .state('shoppinglists.view', {
+        url: '/:shoppinglistId',
         templateUrl: 'modules/articles/client/views/view-article.client.view.html'
       })
-      .state('articles.edit', {
-        url: '/:articleId/edit',
+      .state('shoppinglists.edit', {
+        url: '/:shoppinglistId/edit',
         templateUrl: 'modules/articles/client/views/edit-article.client.view.html',
         data: {
           roles: ['user', 'admin']
