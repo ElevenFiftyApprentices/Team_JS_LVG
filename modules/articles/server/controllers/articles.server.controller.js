@@ -109,7 +109,7 @@ exports.shoppinglistByID = function (req, res, next, id) {
   });
 };
 
-/**ShoppingListItems middleware**/
+// *ShoppingListItems middleware*
 // exports.shoppinglistItemByID = function (req, res, next, id) {
 
 //   if (!mongoose.Types.ObjectId.isValid(id)) {
