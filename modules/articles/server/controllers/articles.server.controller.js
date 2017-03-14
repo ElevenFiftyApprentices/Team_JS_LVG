@@ -108,3 +108,7 @@ exports.shoppinglistByID = function (req, res, next, id) {
     next();
   });
 };
+
+// exports.fontColor = function (req, res, next, id) {
+//   if ( )
+// }
