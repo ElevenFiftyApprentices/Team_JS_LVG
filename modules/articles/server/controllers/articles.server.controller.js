@@ -109,6 +109,31 @@ exports.shoppinglistByID = function (req, res, next, id) {
   });
 };
 
+
 // exports.fontColor = function (req, res, next, id) {
 //   if ( )
 // }
+
+/**ShoppingListItems middleware**/
+// exports.shoppinglistItemByID = function (req, res, next, id) {
+
+//   if (!mongoose.Types.ObjectId.isValid(id)) {
+//     return res.status(400).send({
+//       message: 'Shopping List Item is invalid'
+//     });
+//   }
+
+//   ShoppingListItem.findById(id).populate('itemId', 'content').exec(function (err, shoppinglistItem) {
+//     if (err) {
+//       return next(err);
+//     } else if (!shoppinglistItem) {
+//       return res.status(404).send({
+//         message: 'No shopping list item with that identifier has been found'
+//       });
+//     }
+//     req.shoppinglistItem = shoppinglistItem;
+//     next();
+//   });
+// };
+
+

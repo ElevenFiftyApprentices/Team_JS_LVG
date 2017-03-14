@@ -35,4 +35,30 @@ var ShoppingListSchema = new Schema({
   }
 });
 
+var ShoppingListItemSchema = new Schema({
+  itemid: {
+    type: Schema.ObjectId,
+  },
+  content: {
+    type: String,
+    default: '',
+    trim: true,
+  },
+  isChecked: {
+    type: Boolean,
+    default: false,
+  },
+  created: {
+    type: Date,
+    default: Date.UTC
+  },
+  priority: {
+    type: String,
+    default: '',
+  }
+});
+
+
+
 mongoose.model('ShoppingList', ShoppingListSchema);
+mongoose.model('ShoppingLIstItem', ShoppingListItemSchema);
