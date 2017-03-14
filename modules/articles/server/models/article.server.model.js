@@ -52,7 +52,7 @@ var ShoppingListItemSchema = new Schema({
     type: String,
     default: '',
   }
-})
+});
 
 
 
