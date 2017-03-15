@@ -81,6 +81,8 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       });
     };
 
+}]);
+
     //Item List drop down
     // var shoppinglistitem = $scope.shoppinglistitem;
 //       $scope.priority = [{
@@ -92,5 +94,5 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
 //       }];
 //   $scope.priority = "";
 // });
-  }
-]);
+//   }
+// ]);

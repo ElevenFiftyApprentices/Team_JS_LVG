@@ -1,5 +1,6 @@
 body {
-  background: gray;
+  background-image: url('../img/mall.jpg');
+  width: 100%;
 }
 
 .content {
@@ -38,4 +39,9 @@ a:hover .header-profile-image {
 }
 .has-error .help-inline.error-text {
   display: inline;
+}
+#shoppinglistForms {
+  border: 5px solid darkgray;
+  border-radius: 10px;
+  background-color: darkgray;
 }

@@ -6,7 +6,7 @@
     <a ng-repeat="shoppinglist in shoppinglists" ui-sref="shoppinglists.view({shoppinglistId: shoppinglist._id})" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
-        <span ng-bind="shoppinglist.created | date:'mediumDate'"></span>
+        <span ng-bind="shoppinglist.created | date:'mediumDate' | shoppinglist.id"></span>
         by
         <span ng-bind="shoppinglist.user.displayName"></span>
       </small>

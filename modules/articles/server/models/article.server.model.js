@@ -25,6 +25,10 @@ var ShoppingListSchema = new Schema({
     default: '',
     trim: true
   },
+  color: {
+    type: String,
+    default: '',
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
