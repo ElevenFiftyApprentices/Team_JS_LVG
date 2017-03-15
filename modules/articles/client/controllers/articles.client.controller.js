@@ -18,7 +18,9 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       // Create new Shopping List object
       var shoppinglist = new ShoppingLists({
         title: this.title,
-        content: this.content
+        content: this.content,
+        priority: this.content.priority,
+        notes: this.content.notes
       });
 
       // Redirect after save
@@ -80,5 +82,6 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
         shoppinglistId: $stateParams.shoppinglistId
       });
     };
+
   }
 ]);
