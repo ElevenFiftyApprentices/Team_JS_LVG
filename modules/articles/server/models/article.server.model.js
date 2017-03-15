@@ -56,5 +56,5 @@ var ShoppingListItemSchema = new Schema({
 
 
 
-mongoose.model('ShoppingList', ShoppingListSchema);
+mongoose.model('ShoppingList', ShoppingListSchema),
 mongoose.model('ShoppingLIstItem', ShoppingListItemSchema);

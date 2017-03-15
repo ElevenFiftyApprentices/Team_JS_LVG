@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   ShoppingList = mongoose.model('ShoppingList'),
+  ShoppingListItem = mongoose.model('ShoppingListItem'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
@@ -109,25 +110,5 @@ exports.shoppinglistByID = function (req, res, next, id) {
   });
 };
 
-// *ShoppingListItems middleware*
-// exports.shoppinglistItemByID = function (req, res, next, id) {
 
-//   if (!mongoose.Types.ObjectId.isValid(id)) {
-//     return res.status(400).send({
-//       message: 'Shopping List Item is invalid'
-//     });
-//   }
-
-//   ShoppingListItem.findById(id).populate('itemId', 'content').exec(function (err, shoppinglistItem) {
-//     if (err) {
-//       return next(err);
-//     } else if (!shoppinglistItem) {
-//       return res.status(404).send({
-//         message: 'No shopping list item with that identifier has been found'
-//       });
-//     }
-//     req.shoppinglistItem = shoppinglistItem;
-//     next();
-//   });
-// };
 

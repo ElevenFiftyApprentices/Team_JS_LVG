@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 var shoppinglistsPolicy = require('../policies/articles.server.policy'),
-  shoppinglists = require('../controllers/articles.server.controller');
+  shoppinglists = require('../controllers/articles.server.controller'),
+  ShoppingListItem = require('../controllers/articles.server.controller');
 
 module.exports = function (app) {
   // Articles collection routes
@@ -21,3 +22,5 @@ module.exports = function (app) {
   // Finish by binding the article middleware
   app.param('shoppinglistId', shoppinglists.shoppinglistByID);
 };
+
+

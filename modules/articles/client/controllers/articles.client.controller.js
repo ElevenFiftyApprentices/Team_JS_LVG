@@ -80,17 +80,8 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
         shoppinglistId: $stateParams.shoppinglistId
       });
     };
+  }
+]);
 
-angular.module('staticSelect', [])
- .controller('PriorityController', ['$scope', function($scope) {
-   $scope.data = {
-    singleSelect: null,
-    option1: 'It can wait',
-    option2: 'Need it soon',
-    option3: 'Grab it now!'
-   };
 
-   $scope.forceUnknownOption = function() {
-     $scope.data.singleSelect = 'nonsense';
-   };
-}]);
+
