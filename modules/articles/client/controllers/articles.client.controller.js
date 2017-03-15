@@ -82,6 +82,3 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
     };
   }
 ]);
-
-
-
