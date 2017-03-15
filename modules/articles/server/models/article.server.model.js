@@ -35,6 +35,7 @@ var ShoppingListSchema = new Schema({
   }
 });
 
+
 var ShoppingListItemSchema = new Schema({
   itemid: {
     type: Schema.ObjectId,
@@ -58,7 +59,6 @@ var ShoppingListItemSchema = new Schema({
   }
 });
 
-
-
 mongoose.model('ShoppingList', ShoppingListSchema);
 mongoose.model('ShoppingLIstItem', ShoppingListItemSchema);
+

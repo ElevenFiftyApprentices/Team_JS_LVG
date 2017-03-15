@@ -13,31 +13,18 @@
           </div>
         </div>
         <div class="form-group">
-
-          <label for="content" style="font-weight: bold; font-size: 24px">Content</label>
-          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
-        </div>
-        <div ng-controller="PriorityController">
-          <label for="staticSelect">Item Priority</label>
-            <select name="singleSelect" ng-model="data.singleSelect">
-              <option value="option-1">It can wait</option>
-              <option value="option-2">Need it soon</option>
-              <option value="option-3">Grab it now!</option>
-            </select>
-        </div>
-        <div>
-
-          <label for="itemid">ItemId</label>
-          <textarea name="id" ng-bind="ShoppingListItem.itemid"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Purchased/Complete</label>
-          <input type="checkbox" ng-bind="ShoppingListItem.isChecked">
-        </div>
-        <div class="form-group">
           <label for="color" style="font-weight: bold; font-size: 24px">Font Color</label>
           <input name="color" type="hex" ng-model="color" class="form-control" placeholder="Font Color" dropdown-toggle role="button">
         </div>
+        <div class="form-group">
+
+          <label for="content" style="font-weight: bold; font-size: 24px">List Items</label>
+          <ul>
+            <li>{{shoppinglistitem.id}}</li>
+          </ul>
+        </div>
+
+
         <div class="form-group">
           <input type="submit" class="btn btn-default">
         </div>
