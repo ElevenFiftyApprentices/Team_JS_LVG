@@ -110,11 +110,15 @@ exports.shoppinglistByID = function (req, res, next, id) {
 };
 
 
+
 // exports.fontColor = function (req, res, next, id) {
 //   if ( )
 // }
 
 /**ShoppingListItems middleware**/
+
+// *ShoppingListItems middleware*
+
 // exports.shoppinglistItemByID = function (req, res, next, id) {
 
 //   if (!mongoose.Types.ObjectId.isValid(id)) {
