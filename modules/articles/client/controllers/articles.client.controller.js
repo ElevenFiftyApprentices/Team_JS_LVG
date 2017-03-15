@@ -82,3 +82,17 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
     };
 
 }]);
+
+    //Item List drop down
+    // var shoppinglistitem = $scope.shoppinglistitem;
+//       $scope.priority = [{
+//     name: "Get it now!",
+//   }, {
+//     name: "It can wait",
+//   }, {
+//     name: "Add it to the list",
+//       }];
+//   $scope.priority = "";
+// });
+//   }
+// ]);

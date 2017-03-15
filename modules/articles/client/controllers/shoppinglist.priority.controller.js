@@ -10,3 +10,4 @@ angular.module('staticSelect').controller('PriorityController', ['$scope',
    $scope.forceUnknownOption = function() {
      $scope.data.singleSelect = 'nonsense';
    };
+}]);
