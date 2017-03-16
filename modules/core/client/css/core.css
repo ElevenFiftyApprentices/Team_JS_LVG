@@ -1,5 +1,6 @@
 body {
-  background-image: url('../img/mall.jpg');
+  background: url('../img/mall.jpg') no-repeat;
+  background-size: cover;
 }
 
 .content {
