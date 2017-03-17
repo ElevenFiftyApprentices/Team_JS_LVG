@@ -19,8 +19,8 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       var shoppinglist = new ShoppingLists({
         title: this.title,
         content: this.content,
-        priority: this.content.priority,
-        notes: this.content.notes
+        color: this.color,
+        // notes: this.content.notes
       });
 
       // Redirect after save
@@ -30,6 +30,7 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
         // Clear form fields
         $scope.title = '';
         $scope.content = [];
+        $scope.color = '';
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });

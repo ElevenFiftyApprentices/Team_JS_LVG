@@ -2,6 +2,19 @@ body {
   background: url('../img/mall.jpg') no-repeat;
   background-size: cover;
 }
+.homesies {
+  background-color: black;
+  border: dotted white;
+  border-radius: 15px;
+  /*padding-top: 300px;*/
+  opacity: 0.8;
+}
+
+.homes {
+  font-size: 52px;
+  color: white;
+  text-align: center;
+}
 
 .content {
   margin-top: 50px;
