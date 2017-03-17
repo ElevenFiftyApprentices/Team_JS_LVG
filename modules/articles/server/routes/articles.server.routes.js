@@ -7,6 +7,7 @@ var shoppinglistsPolicy = require('../policies/articles.server.policy'),
   shoppinglists = require('../controllers/articles.server.controller'),
   ShoppingListItem = require('../controllers/articles.server.controller');
 
+
 module.exports = function (app) {
   // Articles collection routes
   app.route('/api/shoppinglists').all(shoppinglistsPolicy.isAllowed)

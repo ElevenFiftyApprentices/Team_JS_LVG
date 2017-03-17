@@ -1,8 +1,8 @@
 'use strict';
 
 // Articles controller
-angular.module('shoppinglists').controller('ShoppingListsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ShoppingLists',
-  function ($scope, $stateParams, $location, Authentication, ShoppingLists) {
+angular.module('shoppinglists').controller('ShoppingListsController', ['$scope', '$stateParams', '$injector', '$location', 'Authentication', 'ShoppingLists',
+  function ($scope, $stateParams, $injector, $location, Authentication, ShoppingLists) {
     $scope.authentication = Authentication;
 
     // Create new Article
@@ -20,6 +20,9 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
         title: this.title,
         content: this.content,
         color: this.color,
+        // priority: this.priority,
+        // isChecked: this.isChecked,
+        // notes: this.notes
         // notes: this.content.notes
       });
 
@@ -31,6 +34,9 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
         $scope.title = '';
         $scope.content = [];
         $scope.color = '';
+        // $scope.priority = '';
+        // $scope.isChecked = true;
+        // $scope.notes = '';
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
@@ -84,5 +90,4 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       });
     };
 
-  }
-]);
+
