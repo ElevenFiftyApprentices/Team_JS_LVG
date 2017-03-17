@@ -24,6 +24,7 @@ exports.create = function (req, res) {
       res.json(shoppinglist);
     }
   });
+
 };
 
 /**
@@ -41,6 +42,7 @@ exports.update = function (req, res) {
 
   shoppinglist.title = req.body.title;
   shoppinglist.content = req.body.content;
+  shoppinglist.color = req.body.color;
 
   shoppinglist.save(function (err) {
     if (err) {
@@ -69,17 +71,6 @@ exports.delete = function (req, res) {
     }
   });
 
-  var shoppinglistitems = req.shoppinglist.content;
-
-    shoppinglist.content.id.remove(function (err) {
-      if (err) {
-        return res.status(400).send({
-          message: errorHandler.getErrorMessage(err)
-        });
-      } else {
-        res.json(shoppinglist.content)
-      }
-    });
 };
 
 /**
