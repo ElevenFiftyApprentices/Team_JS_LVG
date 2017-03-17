@@ -18,7 +18,9 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       // Create new Shopping List object
       var shoppinglist = new ShoppingLists({
         title: this.title,
-        content: this.content
+        content: this.content,
+        priority: this.content.priority,
+        notes: this.content.notes
       });
 
       // Redirect after save
@@ -27,7 +29,7 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
 
         // Clear form fields
         $scope.title = '';
-        $scope.content = '';
+        $scope.content = [];
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
@@ -69,16 +71,18 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       });
     };
 
-    // Find a list of Articles
+    // Find a list of Shopping lists
     $scope.find = function () {
       $scope.shoppinglists = ShoppingLists.query();
     };
 
-    // Find existing Article
+    // Find existing Shopping list
     $scope.findOne = function () {
       $scope.shoppinglist = ShoppingLists.get({
         shoppinglistId: $stateParams.shoppinglistId
       });
     };
-  }
-]);
+
+}]);
+
+

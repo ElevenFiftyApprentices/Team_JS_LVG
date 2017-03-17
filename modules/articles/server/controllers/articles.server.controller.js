@@ -68,6 +68,18 @@ exports.delete = function (req, res) {
       res.json(shoppinglist);
     }
   });
+
+  var shoppinglistitems = req.shoppinglist.content;
+
+    shoppinglist.content.id.remove(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(shoppinglist.content)
+      }
+    });
 };
 
 /**
@@ -108,3 +120,8 @@ exports.shoppinglistByID = function (req, res, next, id) {
     next();
   });
 };
+
+
+
+
+

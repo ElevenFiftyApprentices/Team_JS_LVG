@@ -14,21 +14,60 @@ var ShoppingListSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  modified: {
+    type: Date,
+    default: Date.now
+  },
   title: {
     type: String,
     default: '',
     trim: true,
     required: 'Title cannot be blank'
   },
-  content: {
+  color: {
     type: String,
     default: '',
-    trim: true
   },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
-  }
+  },
+  content: {
+    id: Number,
+    type: [],
+    default: [],
+    isChecked: {
+      type: Boolean,
+      default: false
+      },
+    priority: {
+      type: String,
+      default: '',
+    },
+    created: {
+      type: Date,
+      default: Date.now
+    },
+    modified: {
+      type: Date,
+      default: Date.now
+    },
+    notes: {
+      type: String,
+      default: '',
+      created: {
+        type: Date,
+        default: Date.now
+      },
+      modified: {
+        type: Date,
+        default: Date.now
+      }
+    },
+    trim: true,
+  },
 });
 
 mongoose.model('ShoppingList', ShoppingListSchema);
+
+

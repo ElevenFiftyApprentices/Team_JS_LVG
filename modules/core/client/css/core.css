@@ -1,5 +1,6 @@
 body {
-  background: gray;
+  background: url('../img/mall.jpg') no-repeat;
+  background-size: cover;
 }
 
 .content {
@@ -39,6 +40,7 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+<<<<<<< HEAD
 /*Bootstrap*/
 .lvl-over {
   border: 1px dashed #555 !important;
@@ -52,3 +54,10 @@ a:hover .header-profile-image {
 [draggable] {
   cursor: move;
 }
+=======
+#shoppinglistForms {
+  border: 5px solid darkgray;
+  border-radius: 10px;
+  background-color: darkgray;
+}
+>>>>>>> 80959615dc04505003373663463574162e9b43cb
