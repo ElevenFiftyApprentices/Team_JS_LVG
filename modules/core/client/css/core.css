@@ -2,6 +2,19 @@ body {
   background: url('../img/mall.jpg') no-repeat;
   background-size: cover;
 }
+.homesies {
+  background-color: black;
+  border: dotted white;
+  border-radius: 15px;
+  /*padding-top: 300px;*/
+  opacity: 0.8;
+}
+
+.homes {
+  font-size: 52px;
+  color: white;
+  text-align: center;
+}
 
 .content {
   margin-top: 50px;
@@ -40,7 +53,6 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
-<<<<<<< HEAD
 /*Bootstrap*/
 .lvl-over {
   border: 1px dashed #555 !important;
@@ -54,10 +66,10 @@ a:hover .header-profile-image {
 [draggable] {
   cursor: move;
 }
-=======
+
 #shoppinglistForms {
-  border: 5px solid darkgray;
+  border: 5px solid black;
   border-radius: 10px;
-  background-color: darkgray;
+  background-color: black;
+  opacity: .90;
 }
->>>>>>> 80959615dc04505003373663463574162e9b43cb
