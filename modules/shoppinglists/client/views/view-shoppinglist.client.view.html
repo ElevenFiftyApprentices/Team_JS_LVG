@@ -1,0 +1,79 @@
+<section>  
+  <div class="col-md-12">
+  <div class="page-header">
+    <h1 ng-bind="vm.shoppinglist.title"></h1>
+    </div>
+
+    <small>
+      <em class="text-muted">
+        Posted on
+        <span ng-bind="vm.shoppinglist.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="vm.shoppinglist.user"
+              ng-bind="vm.shoppinglist.user.displayName"></span>
+        <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+      </em>
+    </small>
+  </div>
+
+  <div class="clear-fix"></div>
+
+  <div class="col-md-6">
+    <!-- ADD ITEM -->
+    <h4>Add Item</h4>
+    <!-- {{vm.myList}} -->
+    <form name="vm.form.shoppinglistItemsForm" ng-submit="vm.addItem(vm.form.shoppinglistItemsForm.$valid)" ng-style="{color: vm.shoppinglist.color}" novalidate>
+      
+        <div class="form-group">
+          <input class="form-control" type="text" name="name" id="name" ng-model="vm.name" ng-style="{color: vm.shoppinglist.color}" placeholder="Item" maxlength="25">
+          <select class="form-control" name="priority" id="priority" ng-model="vm.priority">
+              <option value="">Priority</option>
+              <option value="High">Grab it now!</option>
+              <option value="Medium">Need it soon</option>
+              <option value="Low">It can wait</option>
+          </select>
+          <input type="text" class="form-control" name="note" id="note" ng-model="vm.notes" ng-style="{color: vm.shoppinglist.color}" placeholder="Note" maxlength="255" value= " ">
+
+          <button type="submit" class="btn btn-primary">Add</button><!-- &nbsp;&nbsp;<button type="reset" class="btn btn-link" value="reset">clear</button> --> 
+        </div>
+      
+    </form>
+  </div>
+
+  <div class="col-md-6">
+    <div class="panel panel-default" id="listitems"></div>
+      <div class="panel-heading">
+        <h3 class="panel-title">Shopping List Items</h3>
+        </div>
+      <div class="panel-body">
+    <ul>
+      <li ng-repeat="item in vm.shoppinglist.items" class="list-inline" ng-style="{color: vm.shoppinglist.color}">
+        <input type="checkbox" ng-model="item.isChecked" />
+        <span ng-class="{'is-done' : item.isChecked}">Name: {{item.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span ng-class="{'is-done' : item.isChecked}">Priority: {{item.priority}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span ng-class="{'is-done' : item.isChecked}">Notes: {{item.notes}}</span>
+        <button class="btn btn-default btn-xs" id="remove" ng-click="vm.removeItem(item)" aria-label="Remove"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      </li>
+    </ul>
+    <button class="btn btn-default btn-xs" type="button" ng-click="vm.removeCheckedItems()">Remove Checked</button>
+    </div>
+    </div>
+  
+
+  <div class="clear-fix">&nbsp;</div>
+
+  <div class="col-md-12">
+  <br/>
+    <div class="pull-left"
+         ng-show="vm.shoppinglist.isCurrentUserOwner">
+      <a class="btn btn-primary"
+         ui-sref="shoppinglists.edit({ shoppinglistId: vm.shoppinglist._id })">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn btn-primary" ng-click="vm.remove()">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
+  </div>
+
+</section>
