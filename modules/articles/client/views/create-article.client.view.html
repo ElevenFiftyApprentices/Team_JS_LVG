@@ -13,7 +13,7 @@
           </div>
         </div>
 
-         
+
 <!-- HEX CODE INPUT -->
        <div class="form-group" show errors>
        <label for="color" style="font-weight: bold; font-size: 24px">Font Color</label>
@@ -24,64 +24,47 @@
        </div>
     
 
-<!--   <div class="col-md-12">
-  <div class="page-header">
-    <h1 ng-bind="shoppinglist.title"></h1>
-    </div>
-
-    <small>
-      <em class="text-muted">
-        Posted on
-        <span ng-bind="shoppinglist.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="shoppinglist.user"
-              ng-bind="shoppinglist.user.displayName"></span>
-        <span ng-if="shoppinglist.user">Deleted User</span>
-      </em>
-    </small>
-  </div>
- -->
-  <div class="clear-fix"></div>
-
   <div class="col-md-6">
     <!-- ADD ITEM -->
     <h4>Add Item</h4>
     <!-- {{vm.myList}} -->
-    <form name="shoppinglistItemsForm" ng-submit="addItem(shoppinglistItemsForm.$valid)" ng-style="{color: shoppinglist.color}" novalidate>
+    <form name="form.shoppinglistItemsForm" ng-submit="addItem(form.shoppinglistItemsForm.$valid)" ng-style="{color: shoppinglist.color}" novalidate>
       
         <div class="form-group">
-          <input class="form-control" type="text" name="name" id="name" ng-model="name" ng-style="{color: shoppinglist.color}" placeholder="Item" maxlength="25">
-          <select class="form-control" name="priority" id="priority" ng-model="priority">
+          <input class="form-control" type="text" name="name" id="name" ng-model="name" ng-style="{color: vm.shoppinglist.color}" placeholder="Item" maxlength="25">
+          <select class="form-control" name="priority" id="priority" ng-model="vm.priority">
               <option value="">Priority</option>
               <option value="High">High</option>
               <option value="Low">Low</option>
           </select>
-          <input type="text" class="form-control" name="note" id="note" ng-model="notes" ng-style="{color: shoppinglist.color}" placeholder="Note" maxlength="255" value= " ">
+          <input type="text" class="form-control" name="note" id="note" ng-model="vm.notes" ng-style="{color: vm.shoppinglist.color}" placeholder="Note" maxlength="255" value= " ">
 
-          <button type="submit" class="btn btn-primary">Add</button><!-- &nbsp;&nbsp;<button type="reset" class="btn btn-link" value="reset">clear</button> --> 
+       <!--    <button type="submit" class="btn btn-primary">Add</button> --><!-- &nbsp;&nbsp;<button type="reset" class="btn btn-link" value="reset">clear</button> --> 
         </div>
       
     </form>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-6" class="form-group">
     <br/>
+    <label>Shopping List Items</label>
     <ul>
-      <li ng-repeat="content in shoppinglist.content" class="list-inline" ng-style="{color: shoppinglist.color}">
+      <li ng-repeat="content in contents" class="list-inline" ng-style="{color: shoppinglist.color}">
         <input type="checkbox" ng-model="content.isChecked" />
         <span ng-class="{'is-done' : content.isChecked}">Name: {{content.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
         <span ng-class="{'is-done' : content.isChecked}">Priority: {{content.priority}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
         <span ng-class="{'is-done' : content.isChecked}">Notes: {{content.notes}}</span>
-        <button class="btn btn-default btn-xs" id="remove" ng-click="removeItem(item)" aria-label="Remove"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+<!--         <button class="btn btn-default btn-xs" id="remove" ng-click="removeContent(content)" aria-label="Remove"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> -->
       </li>
     </ul>
-    <div class=""></div>
-<!--     <button class="btn btn-default btn-xs" type="checkbox" ng-click="removeCheckedItems()">Check</button>
- -->  </div>
+    <!-- <button class="btn btn-default btn-xs" type="button" ng-click="removeCheckedContents()">Remove Checked</button> -->
+  </div>
 
   <div class="clear-fix">&nbsp;</div>
 
-  <div class="col-md-12">
+
+
+<!--   <div class="col-md-12">
   <br/>
     <div class="pull-left"
          ng-show="shoppinglist.isCurrentUserOwner">
@@ -93,7 +76,11 @@
         <i class="glyphicon glyphicon-trash"></i>
       </a>
     </div>
-
+  </div> -->
+<br>
+<br>
+<br>
+<br>
         <div class="form-group">
           <input type="submit" class="btn btn-default">
         </div>

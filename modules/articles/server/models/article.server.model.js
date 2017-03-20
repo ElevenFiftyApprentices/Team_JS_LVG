@@ -10,65 +10,55 @@ var mongoose = require('mongoose'),
  * ShoppingList Schema
  */
 var ShoppingListSchema = new Schema({
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  modified: {
-    type: Date,
-    default: Date.now
-  },
+
   title: {
     type: String,
     default: '',
-    trim: true,
-    required: 'Title cannot be blank'
+    required: 'Please provide a title for your shopping list',
+    trim: true
   },
   color: {
     type: String,
-    default: '#ff0000',
+    default: '#736F6E',  //Gray
+    // default: '#' + '',
     trim: true
+  },
+  // name: {
+  //   type: String,
+  //   default: '',
+  //   // required: 'Please provide an item name',
+  //   trim: true
+  // },
+  // priority: {
+  //   type: String,
+  //   default: 'Low',
+  //   // required: 'Please select the priority for this item',
+  //   trim: true
+  // },
+  // notes: {
+  //   type: String,
+  //   default: '',
+  //   trim: true
+  // },
+  isChecked: {
+    type: Boolean,
+    default: false
+  },  
+  created: {
+    type: Date,
+    default: Date.now
   },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
   },
-  content: {
-    // id: Number,
+content: {
     type: [],
     default: [],
 
-    created: {
-      type: Date,
-      default: Date.now
-    },
-    modified: {
-      type: Date,
-      default: Date.now
-    },
-
     trim: true,
   },
-  isChecked: {
-      type: Boolean,
-      default: false
-      },
-  notes: {
-    type: String,
-    default: '',
-    created: {
-    type: Date,
-    default: Date.now
-    },
-    modified: {
-    type: Date,
-    default: Date.now
-    },
-  },
-  priority: {
-      type: String,
-      default: '',
-    },
+
 });
 
 mongoose.model('ShoppingList', ShoppingListSchema);

@@ -20,6 +20,8 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
         title: this.title,
         content: this.content,
         color: this.color,
+
+ 
         // priority: this.priority,
         // isChecked: this.isChecked,
         // notes: this.notes
@@ -90,8 +92,6 @@ angular.module('shoppinglists').controller('ShoppingListsController', ['$scope',
       });
     };
 
-
-
-}]);
+ }]);
 
 
