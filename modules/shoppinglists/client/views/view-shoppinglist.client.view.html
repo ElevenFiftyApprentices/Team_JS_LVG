@@ -28,9 +28,11 @@
           <input class="form-control" type="text" name="name" id="name" ng-model="vm.name" ng-style="{color: vm.shoppinglist.color}" placeholder="Item" maxlength="25">
           <select class="form-control" name="priority" id="priority" ng-model="vm.priority">
               <option value="">Priority</option>
+
               <option value="High">Grab it now!</option>
               <option value="Medium">Need it soon</option>
               <option value="Low">It can wait</option>
+
           </select>
           <input type="text" class="form-control" name="note" id="note" ng-model="vm.notes" ng-style="{color: vm.shoppinglist.color}" placeholder="Note" maxlength="255" value= " ">
 
@@ -41,11 +43,9 @@
   </div>
 
   <div class="col-md-6">
-    <div class="panel panel-default" id="listitems"></div>
-      <div class="panel-heading">
-        <h3 class="panel-title">Shopping List Items</h3>
-        </div>
-      <div class="panel-body">
+
+    <br/>
+
     <ul>
       <li ng-repeat="item in vm.shoppinglist.items" class="list-inline" ng-style="{color: vm.shoppinglist.color}">
         <input type="checkbox" ng-model="item.isChecked" />
@@ -56,9 +56,10 @@
       </li>
     </ul>
     <button class="btn btn-default btn-xs" type="button" ng-click="vm.removeCheckedItems()">Remove Checked</button>
+
     </div>
-    </div>
-  
+    
+
 
   <div class="clear-fix">&nbsp;</div>
 
