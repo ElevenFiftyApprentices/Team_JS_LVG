@@ -11,7 +11,9 @@
         <span ng-bind="shoppinglist.user.displayName"></span>
       </small>
       <h4 class="list-group-item-heading" ng-bind="shoppinglist.title"></h4>
-      <p class="list-group-item-text" ng-bind="shoppinglist.content"></p>
+      <p class="list-group-item-text" ng-bind="shoppingListItem.title">
+      <p class="list-group-item-text" ng-bind="shoppingListItem.priority"></p>
+      
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="shoppinglists.$resolved && !shopppinglists.length">

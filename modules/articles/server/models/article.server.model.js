@@ -37,14 +37,7 @@ var ShoppingListSchema = new Schema({
     // id: Number,
     type: [],
     default: [],
-    // isChecked: {
-    //   type: Boolean,
-    //   default: false
-    //   },
-    // priority: {
-    //   type: String,
-    //   default: '',
-    
+
     created: {
       type: Date,
       default: Date.now
@@ -53,22 +46,29 @@ var ShoppingListSchema = new Schema({
       type: Date,
       default: Date.now
     },
-    // notes: {
-    //   type: String,
-    //   default: '',
-    //   created: {
-    //     type: Date,
-    //     default: Date.now
-    //   },
-    //   modified: {
-    //     type: Date,
-    //     default: Date.now
-    //   }
-    // },
+
     trim: true,
   },
+  isChecked: {
+      type: Boolean,
+      default: false
+      },
+  notes: {
+    type: String,
+    default: '',
+    created: {
+    type: Date,
+    default: Date.now
+    },
+    modified: {
+    type: Date,
+    default: Date.now
+    },
+  },
+  priority: {
+      type: String,
+      default: '',
+    },
 });
 
 mongoose.model('ShoppingList', ShoppingListSchema);
-
-

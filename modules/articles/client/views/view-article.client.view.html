@@ -1,6 +1,10 @@
 <section ng-controller="ShoppingListsController" ng-init="findOne()">
   <div class="page-header">
     <h1 ng-bind="shoppinglist.title" style="color: {{shoppinglist.color}}"></h1>
+    <h4 ng-bind="shoppinglist.content" style="color: {{shoppinglist.color}}"><strong></strong></p>
+  <h4 ng-bind="shoppinglist.priority"><strong></strong></h4>
+  <h4 ng-bind="shoppinglist.notes"><strong></strong></h4>
+  <h4 ng-bind="shoppinglist.isChecked"><strong></strong></h4>
   </div>
   <div class="pull-right" ng-show="authentication.user._id == shoppinglist.user._id">
     <a class="btn btn-primary" ui-sref="shoppinglists.edit({shoppinglistId: shoppinglist._id})">
@@ -18,5 +22,6 @@
       <span ng-bind="shoppinglist.user.displayName"></span>
     </em>
   </small>
-  <p class="lead" ng-bind="shoppinglist.content" style="color: {{shoppinglist.color}}"></p>
+  <br>
+
 </section>

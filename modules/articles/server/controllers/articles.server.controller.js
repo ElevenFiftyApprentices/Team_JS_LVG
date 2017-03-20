@@ -112,7 +112,3 @@ exports.shoppinglistByID = function (req, res, next, id) {
   });
 };
 
-
-
-
-
