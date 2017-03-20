@@ -6,20 +6,28 @@
     <form name="shoppinglistForm" class="form-horizontal" ng-submit="update(shoppinglistForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="title">Title</label>
-          <input name="title" type="text" ng-model="shoppinglist.title" id="title" class="form-control" placeholder="Title" required>
+          <label for="title" style="font-weight: bold; font-size: 24px">Title</label>
+          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
           <div ng-messages="shoppinglistForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Shopping List title is required.</p>
+        <label for="color" style="font-weight: bold; font-size: 24px">Font Color</label>
+        <input name="color" type="text" minlength="7" maxlength="7" pattern="[#A-Fa-f0-9]{7}" value="" placeholder="Enter Hex value" ng-model="color" class="form-control" required>
+        <div ng-messages="shoppinglistForm.color.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Proper hex code is required.</p>
+        <label name="content">Items</label>
+          <input class="form-control" type="text" name="content" id="content" ng-model="shoppinglist.content" ng-style="{color: shoppinglist.color}" placeholder="Item" maxlength="25">
+          <select class="form-control" name="priority" id="priority" ng-model="priority">
+              <option value="">Priority</option>
+              <option value="High">Grab it now!</option>
+              <option value="Medium">Need it soon</option>
+              <option value="Low">It can wait</option>
+          </select>
+          <label name="notes">Notes</label>
+          <input type="text" class="form-control" name="note" id="note" ng-model="shoppinglist.notes" ng-style="{color: shoppinglist.color}" placeholder="Note" maxlength="255" value= " ">
+          <label name="purchased">Purchased?</label>
+          <input type="checkbox" name="isChecked" ng-model="shoppinglist.isChecked">
           </div>
-        </div>
-        <div class="form-group">
-          <label for="content">Content</label>
-          <input name="content" ng-model="shoppinglist.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></input>
-        </div>
-        <div class="form-group">
-          <label for="color">Color</label>
-          <input name="color" ng-model="shoppinglist.color" id="color" class="form-control" cols="20" rows="10" placeholder="hex color">
-        </div>
+       
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-default">
         </div>

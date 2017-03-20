@@ -72,5 +72,3 @@ var ShoppingListSchema = new Schema({
 });
 
 mongoose.model('ShoppingList', ShoppingListSchema);
-
-
