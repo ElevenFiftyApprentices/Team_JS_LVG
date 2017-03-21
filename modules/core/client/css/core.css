@@ -1,3 +1,15 @@
+body {
+/*  background: url('../img/mall.jpg') no-repeat;
+  background-size: cover;*/
+  background-color: #3d3d3d;
+}
+
+.homes {
+  font-size: 152px;
+  color: black;
+  text-align: center;
+}
+
 .content {
   margin-top: 50px;
 }
@@ -34,4 +46,24 @@ a:hover .header-profile-image {
 }
 .has-error .help-inline.error-text {
   display: inline;
+}
+/*Bootstrap*/
+.lvl-over {
+  border: 1px dashed #555 !important;
+}
+
+.lvl-target {
+  background-color: #ddd; 
+  opacity: .5;
+}
+
+[draggable] {
+  cursor: move;
+}
+
+#shoppinglistForms {
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .90;
 }

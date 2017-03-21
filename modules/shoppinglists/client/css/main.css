@@ -1,0 +1,11 @@
+.is-done {
+  text-decoration: line-through;
+}
+.col-md-6{
+  border: solid;
+  border-color: black;
+/*  background-color: black;
+*/  border-spacing:10px 50px;
+  background: rgba(44, 35, 25, .9);
+  font-weight: bold;
+}
